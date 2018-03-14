@@ -1,0 +1,25 @@
+<table border="1">
+  <tr>
+    <th>user</th>
+    <th>file name</th>
+    <th>content</th>
+  </tr>
+
+  <tbody>
+     <% users.each do |user| %>
+        <% user.files.each do |uploader| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= uploader.file.original_filename %></td>
+            <td>
+              <% if uploader.file.content_type.starts_with?('image') %>
+                <%= image_tag asset_pathh(uploader.file.path), width: 300 %>
+              <% else %>
+                <%= video_tag asset_pathh(uploader.file.path), controls: true,  width: 300 %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+    <% end %>
+  </tbody>
+</table>

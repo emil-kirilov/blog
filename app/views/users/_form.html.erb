@@ -1,0 +1,8 @@
+<%= form_for @user, options do |f| %>
+  name: <%= f.text_field :name %>
+  email: <%= f.text_field :email %>
+  password: <%= f.password_field :password %>
+  role: <%= f.select :role, current_user.can_create_users %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,10 @@
+<h3> Edit user </h3>
+
+<%= form_for @user, url: user_update_url(@user), method: :patch do |f| %>
+  name: <%= f.text_field :name %>
+  email: <%= f.text_field :email %>
+  password: <%= f.password_field :password %>
+  <%= f.file_field :files, multiple: true %>
+
+  <%= f.submit %>
+<% end %>

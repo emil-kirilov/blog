@@ -1,0 +1,11 @@
+<h3> User information </h3>
+
+<%= render 'users', users: [current_user] %>
+
+<h3> Sub-users </h3>
+
+<%= render 'users', users: @sub_users %>
+
+<h3> Uploads </h3>
+
+<%= render 'uploads', users: @sub_users.unshift(current_user) %>
