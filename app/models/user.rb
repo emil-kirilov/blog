@@ -20,6 +20,7 @@ class User < ApplicationRecord
   end
 
   def can_create_users
+    return []       if user?
     return ['user'] if reseller?
     ['user', 'reseller']
   end

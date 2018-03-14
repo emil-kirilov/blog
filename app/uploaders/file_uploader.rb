@@ -7,7 +7,7 @@ class FileUploader < CarrierWave::Uploader::Base
   end
 
   def extension_whitelist
-    %w(jpg jpeg file png mp4)
+    %w(jpg jpeg png mp4)
   end
 
   def content_type_whitelist

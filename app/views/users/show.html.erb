@@ -2,9 +2,11 @@
 
 <%= render 'users', users: [current_user] %>
 
-<h3> Sub-users </h3>
+<% unless current_user.user? %>
+  <h3> Sub-users </h3>
 
-<%= render 'users', users: @sub_users %>
+  <%= render 'users', users: @sub_users %>
+<% end %>
 
 <h3> Uploads </h3>
 
